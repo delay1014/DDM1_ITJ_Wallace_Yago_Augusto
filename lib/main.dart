@@ -1,28 +1,48 @@
 import 'package:flutter/material.dart';
-import 'navibar.dart';
+import 'NavBar.dart';
 
-void main() {
-  runApp(const MainApp());
+Future main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  runApp(MyApp());
 }
 
-class MainApp extends StatelessWidget {
-  const MainApp({super.key});
+class MyApp extends StatelessWidget {
+  static final String title = 'Navigation Drawer';
 
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-drawer: NavBar(),
+  Widget build(BuildContext context) => MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: title,
+        theme: ThemeData(primarySwatch: Colors.deepPurple),
+        home: MainPage(),
+      );
+}
 
+class MainPage extends StatefulWidget {
+  @override
+  _MainPageState createState() => _MainPageState();
+}
+
+class _MainPageState extends State<MainPage> {
+  @override
+  Widget build(BuildContext context) => Scaffold(
+        drawer: NavBar(),
         appBar: AppBar(
-          title: const Text("IdrinkWater"),backgroundColor: Color.fromARGB(255, 1, 32, 58) ,
+          title: Text(MyApp.title),
         ),
-
-        body: const Center(
-          child: Text("Pagina Inicial", style: TextStyle(fontSize: 40.0),)
-        ) ,
-      ),
-    );
-  }
+        body: Center(
+          child: Card(
+            child: Container(
+              width: 200, // Largura da imagem
+              height: 200, // Altura da imagem
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage('assets/ag.png'), // Substitua pela sua imagem
+                  fit: BoxFit.cover, // Ajuste conforme necessário
+                ),
+              ),
+            ),
+          ),
+        ),
+      );
 }
