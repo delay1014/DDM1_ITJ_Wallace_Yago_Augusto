@@ -25,7 +25,7 @@ class _EventCalendarScreenState extends State<EventCalendarScreen> {
     // TODO: implement initState
     super.initState();
     _selectedDate = _focusedDay;
-
+    print('_selectedDate: $_selectedDate');
     loadPreviousEvents();
   }
 
@@ -146,7 +146,7 @@ class _EventCalendarScreenState extends State<EventCalendarScreen> {
         children: [
           TableCalendar(
             firstDay: DateTime(2022),
-            lastDay: DateTime(2023),
+            lastDay: DateTime(2050),
             focusedDay: _focusedDay,
             calendarFormat: _calendarFormat,
             onDaySelected: (selectedDay, focusedDay) {

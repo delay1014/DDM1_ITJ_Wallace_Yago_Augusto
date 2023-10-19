@@ -27,7 +27,7 @@ class _MainPageState extends State<MainPage2> {
         ),
         body: Center(
           child: Text(
-            'Seu texto aqui!', // Substitua pelo texto que você deseja exibir
+            'Informações', // Substitua pelo texto que você deseja exibir
             style: TextStyle(fontSize: 24),
           ),
         ),
