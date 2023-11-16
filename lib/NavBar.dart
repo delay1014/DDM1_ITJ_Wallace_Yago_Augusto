@@ -8,8 +8,8 @@ class NavBar extends StatelessWidget {
   final padding = EdgeInsets.symmetric(horizontal: 20);
   @override
   Widget build(BuildContext context) {
-    final name = 'Julio';
-    final email = 'juliomcmelt@gmail.com';
+    final name = 'Willard';
+    final email = 'willard@gmail.com';
     const AssetImage('assets/ProfilePic.jpg');
 
     return Drawer(
@@ -32,9 +32,7 @@ class NavBar extends StatelessWidget {
               padding: padding,
               child: Column(
                 children: [
-                  const SizedBox(height: 12),
-                  buildSearchField(),
-                  const SizedBox(height: 24),
+                
                   buildMenuItem(
                     text: 'Home',
                     icon: Icons.home_sharp,

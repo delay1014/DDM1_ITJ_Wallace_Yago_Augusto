@@ -22,7 +22,7 @@ class _EventCalendarScreenState extends State<EventCalendarScreen> {
 
   @override
   void initState() {
-    // TODO: implement initState
+    
     super.initState();
     _selectedDate = _focusedDay;
     print('_selectedDate: $_selectedDate');
@@ -94,7 +94,7 @@ class _EventCalendarScreenState extends State<EventCalendarScreen> {
                     duration: Duration(seconds: 2),
                   ),
                 );
-                //Navigator.pop(context);
+               
                 return;
               } else {
                 print(titleController.text);
@@ -151,7 +151,7 @@ class _EventCalendarScreenState extends State<EventCalendarScreen> {
             calendarFormat: _calendarFormat,
             onDaySelected: (selectedDay, focusedDay) {
               if (!isSameDay(_selectedDate, selectedDay)) {
-                // Call `setState()` when updating the selected day
+               
                 setState(() {
                   _selectedDate = selectedDay;
                   _focusedDay = focusedDay;
@@ -163,14 +163,14 @@ class _EventCalendarScreenState extends State<EventCalendarScreen> {
             },
             onFormatChanged: (format) {
               if (_calendarFormat != format) {
-                // Call `setState()` when updating calendar format
+               
                 setState(() {
                   _calendarFormat = format;
                 });
               }
             },
             onPageChanged: (focusedDay) {
-              // No need to call `setState()` here
+              
               _focusedDay = focusedDay;
             },
             eventLoader: _listOfDayEvents,
